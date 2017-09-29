@@ -28,6 +28,8 @@ class TestComparingPhotos:
 
     @classmethod
     def teardown_class(cls):
+        # TODO: clean test_data directory after test run
+
         pass
 
     def test_getting_by_martian_sol_vs_earth_date(self):
