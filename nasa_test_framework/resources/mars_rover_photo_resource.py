@@ -3,10 +3,12 @@ from datetime import date
 
 import requests
 
-from nasa_test_framework.Resources.base_resource import BaseResource
+from nasa_test_framework.resources.base_resource import BaseResource
 
 
 __author__ = 'anton.skomarovskyi@gmail.com'
+
+DEFAULT_API_KEY = 'VE9TyFhe0CITgrkfsb6pr89uPlTHwNsDvGQJkXx4'
 
 
 class MarsRoverPhotoResource(BaseResource):
@@ -17,7 +19,7 @@ class MarsRoverPhotoResource(BaseResource):
                                       self._HOST,
                                       self._URL_API_PATH)
 
-    def get_by_martian_sol(self, sol, camera=None, page=1, api_key='DEMO_KEY'):
+    def get_by_martian_sol(self, sol, camera=None, page=1, api_key=DEFAULT_API_KEY):
         """
         QUERYING BY MARTIAN SOL
         :type sol: int
@@ -35,7 +37,7 @@ class MarsRoverPhotoResource(BaseResource):
 
         return self.__get_response(params)
 
-    def get_by_earth_date(self, earth_date, camera=None, page=1, api_key='DEMO_KEY'):
+    def get_by_earth_date(self, earth_date, camera=None, page=1, api_key=DEFAULT_API_KEY):
         """
         QUERYING BY EARTH DATE
         :type earth_date: date
